@@ -10,12 +10,12 @@ package domino1;
  * @author IES
  */
 public class Partida {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // 10/10/1995
-    }
+      private int NombreJugadors = 4;
+      private int NombreFitxes = 28;
+      
+      public Partida (int NombreJugadors) {
+          
+      }
+      
     
 }
