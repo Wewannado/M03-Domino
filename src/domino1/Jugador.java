@@ -7,15 +7,8 @@ package domino1;
 
 /**
  *
- * @author IES
+ * @author MarcosPortatil
  */
-public class Domino1 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // 10/10/1995
-    }
+public class Jugador {
     
 }
