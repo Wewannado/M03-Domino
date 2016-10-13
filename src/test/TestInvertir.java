@@ -5,24 +5,30 @@
  */
 package test;
 
+import domino1.Fitxa;
 import domino1.Partida;
 
 /**
  *
- * @author IES
+ * @author MarcosPortatil
  */
-public class NewMain {
+public class TestInvertir {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
         Partida partida = new Partida(4);
         partida.crearFitxes();
+        /**
+         * Prueba del metodo Invertir que le pasamos I (Poisicon de la ficha en
+         * el array y nos invierte la ficha
+         */
+        int i = 5;
+        partida.getFitxes().get(i).invertir();
+        System.out.println(partida.getFitxes().get(i));
+        System.out.println("TODAS LAS FICHAS----------------");
         System.out.println(partida.getFitxes());
-        
     }
-    
+
 }

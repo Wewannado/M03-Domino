@@ -17,7 +17,7 @@ public class Fitxa {
         return Valor;
     }
 
-    public void Invertir() { /*Invertir el orden de los valores de 
+    public void invertir() { /*Invertir el orden de los valores de 
          fitxa*/
 
         int aux = Valor[0];
@@ -27,6 +27,7 @@ public class Fitxa {
 
     @Override
     public String toString() {
-        return "Fitxa{" + "Valor=" + Valor[0] + "," + Valor[1]+"}\n";
+        
+        return "\n "+ "Fitxa{" + "Valor=" + Valor[0] + "," + Valor[1]+"}";
     }
 }
