@@ -34,9 +34,12 @@ public class Jugador {
         return fitxes;
     }
 
+
     public void setFitxes(ArrayList<Fitxa> fitxes) {
         this.fitxes = fitxes;
     }
+
+  
 
     public String getNombre() {
         return nombre;
