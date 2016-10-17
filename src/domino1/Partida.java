@@ -18,7 +18,7 @@ public class Partida {
     private int NombreJugadors = 4;
     private int NombreFitxes = 28;
     private ArrayList<Fitxa> fitxes;
-    private ArrayList<Jugador> jugadors;
+    private Jugador [] jugadors;
     
 
     public Partida(int NombreJugadors) {
@@ -37,8 +37,10 @@ public class Partida {
     }
 
     public void crearJugador(String nombre) {
+        jugadors = new Jugador [4];
         for (int i = 1; i < NombreJugadors; i++) {
-            jugadors.add(new Jugador(i, nombre));
+            
+            jugadors[i] = new Jugador(i, nombre);
                 
             }
         }
@@ -46,7 +48,6 @@ public class Partida {
     
 
    public int[] arrayDesordenat() {
-       int NombreFitxes = 28;
        int[] aleatoris = new int[NombreFitxes];
        boolean[] aux = new boolean[NombreFitxes];
        int num;
@@ -63,9 +64,12 @@ public class Partida {
    }
 
     public void repartirFitxes() {
+        int[] aleatoris = arrayDesordenat();
+        int pos = 0;
          for (int i = 1; i < NombreJugadors; i++) {
-             for (int j = 0; j < 6; j++) {
-                 
+             for (int j = 0; j < 7; j++) {
+                 jugadors[i].getFitxes().add(this.fitxes[aleatoris]);
+                 //jugadors[i].getFitxes().add(this.fitxes[aleatoris[pos++]]);
              }
                 
             }

@@ -13,12 +13,12 @@ import java.util.ArrayList;
  */
 public class Jugador {
     int id;
-    String nonbre;
+    String nombre;
     private ArrayList<Fitxa> fitxes;
     
     public Jugador (int id, String nombre) {
         this.id=id;
-        this.nonbre=nombre;
+        this.nombre=nombre;
         fitxes= new ArrayList();
     }
 
@@ -38,12 +38,12 @@ public class Jugador {
         this.fitxes = fitxes;
     }
 
-    public String getNonbre() {
-        return nonbre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNonbre(String nonbre) {
-        this.nonbre = nonbre;
+    public void setNombre(String nonbre) {
+        this.nombre = nonbre;
     }
     
     public void esborrarFitxa(Fitxa c) {
