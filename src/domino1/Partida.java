@@ -64,17 +64,22 @@ public class Partida {
    }
 
     public void repartirFitxes() {
+        
         int[] aleatoris = arrayDesordenat();
         int pos = 0;
-         for (int i = 1; i < NombreJugadors; i++) {
+         for (int i = 0; i < NombreJugadors; i++) {
+//             ArrayList<Fitxa> aux= new ArrayList();
              for (int j = 0; j < 7; j++) {
-                 jugadors[i].getFitxes().add(this.fitxes[aleatoris]);
-                 //jugadors[i].getFitxes().add(this.fitxes[aleatoris[pos++]]);
+//                 aux.add(this.fitxes.get(aleatoris[j]));
+                 
+                jugadors[1].getFitxes().add(this.fitxes.get(aleatoris[pos++]));
              }
-                
-            }
-        }
+//              System.out.println(aux);  
+           // jugadors[1].setFitxes(aux);
+                            //}
         
+    }
+    }
     
 
     public ArrayList<Fitxa> getFitxes() {
