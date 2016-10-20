@@ -13,12 +13,12 @@ import java.util.ArrayList;
  */
 public class Jugador {
     private int id;
-    private String nombre;
+    private String nom;
     private ArrayList<Fitxa> fitxes;
     
-    public Jugador (int id, String nombre) {
+    public Jugador (int id, String nom) {
         this.id=id;
-        this.nombre=nombre;
+        this.nom=nom;
         fitxes= new ArrayList();
     }
 
@@ -41,12 +41,12 @@ public class Jugador {
 
   
 
-    public String getNombre() {
-        return nombre;
+    public String getNom() {
+        return nom;
     }
 
-    public void setNombre(String nonbre) {
-        this.nombre = nonbre;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
     
     public void esborrarFitxa(Fitxa c) {
@@ -55,7 +55,7 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "id=" + id + ", nombre=" + nombre + ", fitxes=" + fitxes + '}';
+        return "Jugador{" + "id=" + id + ", nom=" + nom + ", fitxes=" + fitxes + '}';
     }
    
 }

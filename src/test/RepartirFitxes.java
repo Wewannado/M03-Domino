@@ -23,7 +23,7 @@ public class RepartirFitxes {
         partida.crearFitxes();
 
        
-        String [] noms = {"Roger","MArcos","Gerad","Abel"};
+        String [] noms = {"Roger","Marcos","Gerard","Abel"};
         partida.crearJugadors(noms);
         
         partida.repartirFitxes();
