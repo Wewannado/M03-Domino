@@ -36,11 +36,11 @@ public class Partida {
 
     }
 
-    public void crearJugador(String nombre) {
+    public void crearJugadors(String [] nom) {
         jugadors = new Jugador [4];
-        for (int i = 1; i < NombreJugadors; i++) {
+        for (int i = 0; i < NombreJugadors; i++) {
             
-            jugadors[i] = new Jugador(i, nombre);
+            jugadors[i] = new Jugador(i, nom[i]);
                 
             }
         }
@@ -72,7 +72,7 @@ public class Partida {
              for (int j = 0; j < 7; j++) {
 //                 aux.add(this.fitxes.get(aleatoris[j]));
                  
-                jugadors[1].getFitxes().add(this.fitxes.get(aleatoris[pos++]));
+                jugadors[i].getFitxes().add(this.fitxes.get(aleatoris[pos++]));
              }
 //              System.out.println(aux);  
            // jugadors[1].setFitxes(aux);
@@ -84,6 +84,10 @@ public class Partida {
 
     public ArrayList<Fitxa> getFitxes() {
         return fitxes;
+    }
+
+    public Jugador[] getJugadors() {
+        return jugadors;
     }
 
 }

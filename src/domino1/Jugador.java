@@ -12,8 +12,8 @@ import java.util.ArrayList;
  * @author MarcosPortatil
  */
 public class Jugador {
-    int id;
-    String nombre;
+    private int id;
+    private String nombre;
     private ArrayList<Fitxa> fitxes;
     
     public Jugador (int id, String nombre) {
@@ -52,5 +52,10 @@ public class Jugador {
     public void esborrarFitxa(Fitxa c) {
     fitxes.remove(c);
 }
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "id=" + id + ", nombre=" + nombre + ", fitxes=" + fitxes + '}';
+    }
    
 }
