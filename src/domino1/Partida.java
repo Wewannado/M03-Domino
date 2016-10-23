@@ -44,7 +44,17 @@ public class Partida {
                 
             }
         }
-
+    public int buscarFitxa(int[]fitxa) {
+        int jugador=0;
+        for (int i = 0; i < NombreJugadors; i++) {
+             ArrayList<Fitxa> aux= new ArrayList();
+             aux=jugadors[i].getFitxes();
+             
+        
+        
+    }
+        return jugador;
+        }
     
 
    public int[] arrayDesordenat() {
@@ -89,5 +99,5 @@ public class Partida {
     public Jugador[] getJugadors() {
         return jugadors;
     }
-
+    
 }
