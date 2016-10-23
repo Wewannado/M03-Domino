@@ -44,13 +44,13 @@ public class Partida {
                 
             }
         }
-    public int buscarFitxa(int fitxa) {
+    public int buscarFitxa(Fitxa fitxa) {
         int jugador=0;
         for (int i = 0; i < NombreJugadors; i++) {
              ArrayList<Fitxa> aux= new ArrayList();
              aux=jugadors[i].getFitxes();
              for (int j = 0; j < aux.size(); j++) {
-                 System.out.println(aux.get(j)); 
+                 System.out.println(aux.get(j).getValor()); 
                
             }
         
