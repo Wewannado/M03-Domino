@@ -83,15 +83,10 @@ public class Partida {
         int[] aleatoris = arrayDesordenat();
         int pos = 0;
         for (int i = 0; i < NombreJugadors; i++) {
-//             ArrayList<Fitxa> aux= new ArrayList();
             for (int j = 0; j < 7; j++) {
-//                 aux.add(this.fitxes.get(aleatoris[j]));
-
                 jugadors[i].getFitxes().add(this.fitxes.get(aleatoris[pos++]));
             }
-//              System.out.println(aux);  
-            // jugadors[1].setFitxes(aux);
-            //}
+
 
         }
     }
@@ -124,6 +119,7 @@ public class Partida {
         } else {
             tablero.addFirst(fitxa2);
         }
+        
     }
 
     public ArrayList<Fitxa> getFitxes() {
