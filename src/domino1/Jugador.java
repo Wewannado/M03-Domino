@@ -45,7 +45,18 @@ public class Jugador {
         for (int i = 0; i < fitxes.size(); i++) {
             if (Arrays.equals(c.getValor(), fitxes.get(i).getValor())) {
                     fitxes.remove(i);
+                } else {
+                c.invertir();
+                if (Arrays.equals(c.getValor(), fitxes.get(i).getValor())) {
+                    fitxes.remove(i);
+                }
+;
+                
+                    
                 }  
+            
+                
+            
         }
     
                       
