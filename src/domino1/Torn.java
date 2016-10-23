@@ -10,22 +10,25 @@ package domino1;
  * @author MarcosPortatil
  */
 public class Torn {
+
     private String nom;
     private int TornsPassats;
 
+    public Torn(String nom, int TornsPassats) {
+        this.TornsPassats = TornsPassats;
+        this.nom = nom;
+    }
 
-public Torn(String nom, int TornsPassats){
-this.TornsPassats=TornsPassats;
-this.nom=nom;
+    private void passarTorn() {
+        TornsPassats++;
+    }
+
+    public int getTornsPassats() {
+        return TornsPassats;
+    }
+
+    void tirarFitxa(String Jugador, Fitxa fitxa) {
+
+    }
+
 }
-
-public int passarTorn (String Jugador){
-    return TornsPassats;
-}
-
-void tirarFitxa(String Jugador, Fitxa fitxa){
-    
-}
-
-}
-
