@@ -39,6 +39,7 @@ public class RepartirFitxes {
             System.out.println(j);
         }
         
+        
     }
 
 }

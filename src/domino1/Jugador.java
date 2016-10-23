@@ -6,6 +6,7 @@
 package domino1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -39,7 +40,14 @@ public class Jugador {
         return nom;
     }    
     public void esborrarFitxa(Fitxa c) {
-    fitxes.remove(c);
+        for (int i = 0; i < fitxes.size(); i++) {
+            if (Arrays.equals(c.getValor(), fitxes.get(i).getValor())) {
+                    fitxes.remove(i);
+                }  
+        }
+    
+                      
+                
 }
 
     @Override
