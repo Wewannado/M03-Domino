@@ -34,11 +34,11 @@ public class RepartirFitxes {
         Fitxa test = new Fitxa(aux);
         int jugadorInicial = (partida.buscarFitxa(test));
         System.out.println("Comença el jugador " + jugadorInicial);
-        partida.tirarFitxa(jugadorInicial, test);
+        partida.tirarFitxa(jugadorInicial, test, true);
         for (Jugador j : partida.getJugadors()) {
             System.out.println(j);
         }
-        
+        System.out.println(partida.getTablero());
         
     }
 

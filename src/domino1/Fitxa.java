@@ -27,8 +27,8 @@ public class Fitxa {
 
     @Override
     public String toString() {
-        
-        return "\n "+ "Fitxa{" + "Valor=" + Valor[0] + "," + Valor[1]+"}";
+        //return "["+Valor[0] + "," + Valor[1]+"]";
+        return Valor[0] + ":" + Valor[1];
     }
     
 }

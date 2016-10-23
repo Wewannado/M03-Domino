@@ -21,7 +21,7 @@ public class Partida {
     private int NombreFitxes = 28;
     private ArrayList<Fitxa> fitxes;
     private Jugador[] jugadors;
-     private ArrayDeque<Fitxa> tablero;
+    private ArrayDeque<Fitxa> tablero;
 
     public Partida(int NombreJugadors) {
         this.NombreJugadors = NombreJugadors;
@@ -49,13 +49,13 @@ public class Partida {
     }
 
     public int buscarFitxa(Fitxa fitxa) {
-        int jugador =0;
+        int jugador = 0;
         for (int i = 0; i < NombreJugadors; i++) {
             ArrayList<Fitxa> aux = new ArrayList();
             aux = jugadors[i].getFitxes();
             for (int j = 0; j < aux.size(); j++) {
                 if (Arrays.equals(aux.get(j).getValor(), fitxa.getValor())) {
-                    jugador=i;
+                    jugador = i;
                 }
             }
         }
@@ -77,6 +77,7 @@ public class Partida {
         }
         return aleatoris;
     }
+
     public void repartirFitxes() {
 
         int[] aleatoris = arrayDesordenat();
@@ -94,12 +95,43 @@ public class Partida {
 
         }
     }
-    public void tirarFitxa(int jugador, Fitxa fitxa) {
+
+    /**
+     *
+     * @param jugador
+     * @param fitxa
+     * @param posicio valor FALSE inserta a izquierda, valor true a la derecha
+     */
+    public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio) {
+        jugadors[jugador].esborrarFitxa(fitxa);
+        if (posicio) {
             tablero.add(fitxa);
-            jugadors[jugador].esborrarFitxa(fitxa);
+        } else {
+            tablero.addFirst(fitxa);
+        }
     }
+
+    public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio, Fitxa fitxa2, boolean posicio2) {
+        jugadors[jugador].esborrarFitxa(fitxa);
+        jugadors[jugador].esborrarFitxa(fitxa2);
+        if (posicio) {
+            tablero.add(fitxa);
+        } else {
+            tablero.addFirst(fitxa);
+        }
+        if (posicio2) {
+            tablero.add(fitxa2);
+        } else {
+            tablero.addFirst(fitxa2);
+        }
+    }
+
     public ArrayList<Fitxa> getFitxes() {
         return fitxes;
+    }
+
+    public ArrayDeque<Fitxa> getTablero() {
+        return tablero;
     }
 
     public Jugador[] getJugadors() {
