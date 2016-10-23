@@ -14,7 +14,8 @@ import domino1.Fitxa;
  * @author MarcosPortatil
  */
 public class RepartirFitxes {
-
+private static boolean ESQUERRA=false;
+private static boolean DRETA=true;
     /**
      * @param args the command line arguments
      */
@@ -34,11 +35,11 @@ public class RepartirFitxes {
         Fitxa test = new Fitxa(aux);
         int jugadorInicial = (partida.buscarFitxa(test));
         System.out.println("Comença el jugador " + jugadorInicial);
-        partida.tirarFitxa(jugadorInicial, test, true);
+        partida.tirarFitxa(jugadorInicial, test, DRETA);
          int[] aux2 = {6, 5};
         Fitxa test2 = new Fitxa(aux2);
-        partida.tirarFitxa(jugadorInicial, test2, false);
-        partida.tirarFitxa(jugadorInicial, test, true);
+        partida.tirarFitxa(jugadorInicial, test2, ESQUERRA);
+        partida.tirarFitxa(jugadorInicial, test, DRETA);
         for (Jugador j : partida.getJugadors()) {
             System.out.println(j);
         }
