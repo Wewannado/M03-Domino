@@ -30,7 +30,6 @@ public class RepartirFitxes {
         for (Jugador j: partida.getJugadors()) {
             System.out.println(j);
         }
-        System.out.println(partida.buscarFitxa(0));
        
         
         
