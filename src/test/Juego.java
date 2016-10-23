@@ -38,6 +38,7 @@ public class Juego {
         partida.tirarFitxa(jugadorInicial, test, true);
         Jugador[] jugadors = partida.getJugadors();
         System.out.println("La fitxa ["+ aux[0]+":"+aux[1]+"] es de: "+jugadors[jugadorInicial].getNom());
+        jugadorInicial++;
         while (!partida.comprovarFiPartida()) {
             for (int i = jugadorInicial; i < partida.getJugadors().length; i++) {
                 System.out.println("Tauler actual");
