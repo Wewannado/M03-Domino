@@ -53,6 +53,8 @@ public class Juego {
                         semaforo = partida.tirarFitxa(i, fitxa, pos);
                         if(!semaforo){
                             System.out.println("No es pot jugar aquesta fitxa");
+                            System.out.println("Tauler actual");
+                            System.out.println(partida.getTablero());
                         }
                     }
                 } while (!semaforo);
