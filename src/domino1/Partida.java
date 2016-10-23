@@ -99,12 +99,12 @@ public class Partida {
     public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio) {
         if (tablero.isEmpty()) {
             tablero.add(fitxa);
-        } else if (comprovarPosibilitatIntroduccio(fitxa, posicio)) {
+        } else if (!comprovarPosibilitatIntroduccio(fitxa, posicio)) {
             jugadors[jugador].esborrarFitxa(fitxa);
             if (posicio) {
                 tablero.add(comprovarPosicioFitxa(fitxa, posicio));
             } else {
-                tablero.add(comprovarPosicioFitxa(fitxa, posicio));
+                tablero.addFirst(comprovarPosicioFitxa(fitxa, posicio));
             }
         } else {
             System.out.println("NO SE PUEDE INTRODUCIR");
@@ -141,7 +141,7 @@ public class Partida {
 
     private Fitxa comprovarPosicioFitxa(Fitxa fitxa, boolean posicio) {
         if (posicio) {
-            if (fitxa.getValor()[0] == tablero.getLast().getValor()[1]) {
+            if (fitxa.getValor()[0] != tablero.getLast().getValor()[1]) {
                 fitxa.invertir();
             }
         } else if (fitxa.getValor()[1] == tablero.getFirst().getValor()[0]) {
@@ -156,7 +156,7 @@ public class Partida {
             if (fitxa.getValor()[0] == tablero.getLast().getValor()[1] || fitxa.getValor()[1] == tablero.getLast().getValor()[1]) {
                 return false;
             }
-        } else if (fitxa.getValor()[1] == tablero.getFirst().getValor()[0] || fitxa.getValor()[1] == tablero.getFirst().getValor()[0]) {
+        } else if (fitxa.getValor()[1] == tablero.getFirst().getValor()[0] || fitxa.getValor()[0] == tablero.getFirst().getValor()[0]) {
             return false;
         }
         return correcte;
