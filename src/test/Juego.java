@@ -35,14 +35,13 @@ public class Juego {
         int[] aux = {6, 6};
         Fitxa test = new Fitxa(aux);
         int jugadorInicial = (partida.buscarFitxa(test));
-        partida.tirarFitxa(0, test, true);
+        partida.tirarFitxa(jugadorInicial, test, true);
         while (!partida.comprovarFiPartida()) {
             for (int i = jugadorInicial; i < partida.getJugadors().length; i++) {
                 System.out.println("Tauler actual");
                 System.out.println(partida.getTablero());
                 boolean semaforo = false;
                 do {
-                    
                     Jugador[] jugadors = partida.getJugadors();
                     System.out.println("Les teves fitxes son:");
                     System.out.println(jugadors[i]);
@@ -55,16 +54,18 @@ public class Juego {
                         boolean pos;
                         pos = posicio == 0;
                         semaforo = partida.tirarFitxa(i, fitxa, pos);
-                        if(!semaforo){
+                        if (!semaforo) {
                             System.out.println("No es pot jugar aquesta fitxa");
                             System.out.println("Tauler actual");
                             System.out.println(partida.getTablero());
                         }
+                    } else {
+                        //el jugador passa turno.
+                        semaforo = true;
                     }
                 } while (!semaforo);
-
             }
-            jugadorInicial=0;
+            jugadorInicial = 0;
         }
         System.out.println("Fi del JOC!!!! Ha guanyat el jugador.... NO HO SABEM!!");
     }
