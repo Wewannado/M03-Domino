@@ -121,6 +121,13 @@ public class Partida {
         }
         
     }
+    private void ComprovarFiPartida() {
+        for (int i = 0; i < NombreJugadors; i++) {
+           if(jugadors[i].getFitxes().isEmpty()) {
+               System.exit(0);
+           }       
+        }
+    }
 
     public ArrayList<Fitxa> getFitxes() {
         return fitxes;
