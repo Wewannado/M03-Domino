@@ -37,29 +37,29 @@ public class Juego {
         int jugadorInicial = (partida.buscarFitxa(test));
         while (!partida.comprovarFiPartida()) {
             for (int i = 0; i < partida.getJugadors().length; i++) {
-                do {
-                Jugador[] jugadors = partida.getJugadors();
-                System.out.println("Les teves fitxes son:");
-                System.out.println(jugadors[i]);
                 boolean semaforo = false;
-                    
-                
-                
-                int valor1 = entrarUnNumero("Quina fitxa vols jugar? Entra el primer valor de la fitxa. -1 per passar torn.", "Has d'entrar un valor numeric");
-                if (valor1 != -1) {
-                    int valor2 = entrarUnNumero("Quina fitxa vols jugar? Entra el segon valor de la fitxa", "Has d'entrar un valor numeric");
-                    int posicio = entrarUnNumero("Inserir a la dreta (0) o a l'esquerra (1)?", "Has d'entrar un valor numeric");
-                    int[] aux2 = {valor1, valor2};
-                    Fitxa fitxa = new Fitxa(aux2);
-                    boolean pos;
-                    pos = posicio == 0;
-                    semaforo = partida.tirarFitxa(i, fitxa, pos);
-                }
-                } while (false);
+                do {
+                    Jugador[] jugadors = partida.getJugadors();
+                    System.out.println("Les teves fitxes son:");
+                    System.out.println(jugadors[i]);
+                    int valor1 = entrarUnNumero("Quina fitxa vols jugar? Entra el primer valor de la fitxa. -1 per passar torn.", "Has d'entrar un valor numeric");
+                    if (valor1 != -1) {
+                        int valor2 = entrarUnNumero("Quina fitxa vols jugar? Entra el segon valor de la fitxa", "Has d'entrar un valor numeric");
+                        int posicio = entrarUnNumero("Inserir a la dreta (0) o a l'esquerra (1)?", "Has d'entrar un valor numeric");
+                        int[] aux2 = {valor1, valor2};
+                        Fitxa fitxa = new Fitxa(aux2);
+                        boolean pos;
+                        pos = posicio == 0;
+                        semaforo = partida.tirarFitxa(i, fitxa, pos);
+                        if(!semaforo){
+                            System.out.println("No es pot jugar aquesta fitxa");
+                        }
+                    }
+                } while (!semaforo);
 
                 System.out.println("Tauler actual");
                 System.out.println(partida.getTablero());
-                
+
             }
         }
         System.out.println("Fi del JOC!!!! Ha guanyat el jugador.... NO HO SABEM!!");
