@@ -96,7 +96,8 @@ public class Partida {
      * @param fitxa
      * @param posicio valor FALSE inserta a izquierda, valor true a la derecha
      */
-    public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio) {
+    public boolean tirarFitxa(int jugador, Fitxa fitxa, boolean posicio) {
+        
         if (tablero.isEmpty()) {
             tablero.add(fitxa);
         } else if (comprovarPosibilitatIntroduccio(fitxa, posicio)) {
@@ -106,9 +107,10 @@ public class Partida {
                 tablero.addFirst(comprovarPosicioFitxa(fitxa, posicio));
             }
         } else {
-            System.out.println("NO SE PUEDE INTRODUCIR");
+            return false;
         }
         jugadors[jugador].esborrarFitxa(fitxa);
+        return true;
     }
 
     public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio, Fitxa fitxa2, boolean posicio2) {
