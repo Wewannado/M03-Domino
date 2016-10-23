@@ -21,7 +21,7 @@ public class RepartirFitxes {
           
         Partida partida = new Partida(4);
         partida.crearFitxes();
-
+        
        
         String [] noms = {"Roger","Marcos","Gerard","Abel"};
         partida.crearJugadors(noms);
@@ -30,7 +30,9 @@ public class RepartirFitxes {
         for (Jugador j: partida.getJugadors()) {
             System.out.println(j);
         }
- 
+        System.out.println(partida.buscarFitxa(0));
+       
+        
         
     }
     
