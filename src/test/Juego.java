@@ -36,13 +36,15 @@ public class Juego {
         Fitxa test = new Fitxa(aux);
         int jugadorInicial = (partida.buscarFitxa(test));
         partida.tirarFitxa(jugadorInicial, test, true);
+        Jugador[] jugadors = partida.getJugadors();
+        System.out.println("La fitxa ["+ aux[0]+":"+aux[1]+"] es de: "+jugadors[jugadorInicial].getNom());
         while (!partida.comprovarFiPartida()) {
             for (int i = jugadorInicial; i < partida.getJugadors().length; i++) {
                 System.out.println("Tauler actual");
                 System.out.println(partida.getTablero());
                 boolean semaforo = false;
                 do {
-                    Jugador[] jugadors = partida.getJugadors();
+                    
                     System.out.println("Les teves fitxes son:");
                     System.out.println(jugadors[i]);
                     int valor1 = entrarUnNumero("Quina fitxa vols jugar? Entra el primer valor de la fitxa. -1 per passar torn.", "Has d'entrar un valor numeric");
