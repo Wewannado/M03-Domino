@@ -6,7 +6,7 @@
 package domino1;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
+import domino1.Jugador;
 
 /**
  *
@@ -16,12 +16,12 @@ public class Torn {
 
     private String nom;
     private int TornsPassats;
-    private ArrayDeque<Fitxa> fitxes;
+   
 
     public Torn(String nom, int TornsPassats) {
         this.TornsPassats = TornsPassats;
         this.nom = nom;
-        fitxes = new ArrayDeque<>();
+        
     }
 
     private void passarTorn() {
@@ -32,8 +32,6 @@ public class Torn {
         return TornsPassats;
     }
 
-    void tirarFitxa(String Jugador, Fitxa fitxa) {
-           
-    }
+    
 
 }

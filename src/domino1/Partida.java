@@ -8,6 +8,7 @@ package domino1;
 import java.util.ArrayList;
 import java.util.Random;
 import domino1.Jugador;
+import java.util.ArrayDeque;
 import java.util.Arrays;
 
 /**
@@ -20,10 +21,12 @@ public class Partida {
     private int NombreFitxes = 28;
     private ArrayList<Fitxa> fitxes;
     private Jugador[] jugadors;
+     private ArrayDeque<Fitxa> tablero;
 
     public Partida(int NombreJugadors) {
         this.NombreJugadors = NombreJugadors;
         fitxes = new ArrayList<>();
+        tablero = new ArrayDeque<>();
     }
 
     public void crearFitxes() {
@@ -74,7 +77,6 @@ public class Partida {
         }
         return aleatoris;
     }
-
     public void repartirFitxes() {
 
         int[] aleatoris = arrayDesordenat();
@@ -92,7 +94,10 @@ public class Partida {
 
         }
     }
-
+    public void tirarFitxa(int jugador, Fitxa fitxa) {
+            tablero.add(fitxa);
+            jugadors[jugador].esborrarFitxa(fitxa);
+    }
     public ArrayList<Fitxa> getFitxes() {
         return fitxes;
     }

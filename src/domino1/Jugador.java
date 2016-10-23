@@ -37,10 +37,7 @@ public class Jugador {
 
     public String getNom() {
         return nom;
-    }
-
-   
-    
+    }    
     public void esborrarFitxa(Fitxa c) {
     fitxes.remove(c);
 }
