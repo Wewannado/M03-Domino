@@ -41,6 +41,7 @@ private static boolean DRETA=true;
         System.out.println(partida.getTablero());
         partida.tirarFitxa(jugadorInicial, test2, ESQUERRA);
         System.out.println(partida.getTablero());
+        
         partida.tirarFitxa(jugadorInicial, test, DRETA);
         for (Jugador j : partida.getJugadors()) {
             System.out.println(j);

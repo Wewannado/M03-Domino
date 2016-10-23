@@ -100,7 +100,7 @@ public class Partida {
         if (tablero.isEmpty()) {
             tablero.add(fitxa);
         } else if (!comprovarPosibilitatIntroduccio(fitxa, posicio)) {
-            jugadors[jugador].esborrarFitxa(fitxa);
+            
             if (posicio) {
                 tablero.add(comprovarPosicioFitxa(fitxa, posicio));
             } else {
@@ -109,6 +109,7 @@ public class Partida {
         } else {
             System.out.println("NO SE PUEDE INTRODUCIR");
         }
+        jugadors[jugador].esborrarFitxa(fitxa);
     }
 
     public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio, Fitxa fitxa2, boolean posicio2) {
@@ -144,7 +145,7 @@ public class Partida {
             if (fitxa.getValor()[0] != tablero.getLast().getValor()[1]) {
                 fitxa.invertir();
             }
-        } else if (fitxa.getValor()[1] == tablero.getFirst().getValor()[0]) {
+        } else if (fitxa.getValor()[1] != tablero.getFirst().getValor()[0]) {
             fitxa.invertir();
         }
         return fitxa;
