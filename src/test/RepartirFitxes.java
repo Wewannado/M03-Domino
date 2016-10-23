@@ -44,7 +44,9 @@ private static boolean DRETA=true;
             System.out.println(j);
         }
         System.out.println(partida.getTablero());
-        
+         int[] aux3 = {4, 6};
+        Fitxa test5 = new Fitxa(aux2);
+        partida.tirarFitxa(jugadorInicial, test5, DRETA);
     }
 
 }
