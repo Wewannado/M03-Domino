@@ -99,8 +99,7 @@ public class Partida {
     public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio) {
         if (tablero.isEmpty()) {
             tablero.add(fitxa);
-        } else if (!comprovarPosibilitatIntroduccio(fitxa, posicio)) {
-            
+        } else if (comprovarPosibilitatIntroduccio(fitxa, posicio)) {
             if (posicio) {
                 tablero.add(comprovarPosicioFitxa(fitxa, posicio));
             } else {
@@ -152,13 +151,13 @@ public class Partida {
     }
 
     private boolean comprovarPosibilitatIntroduccio(Fitxa fitxa, boolean posicio) {
-        boolean correcte = true;
+        boolean correcte = false;
         if (posicio) {
             if (fitxa.getValor()[0] == tablero.getLast().getValor()[1] || fitxa.getValor()[1] == tablero.getLast().getValor()[1]) {
-                return false;
+                return true;
             }
         } else if (fitxa.getValor()[1] == tablero.getFirst().getValor()[0] || fitxa.getValor()[0] == tablero.getFirst().getValor()[0]) {
-            return false;
+            return true;
         }
         return correcte;
     }

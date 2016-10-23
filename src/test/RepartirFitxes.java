@@ -31,26 +31,24 @@ private static boolean DRETA=true;
         for (Jugador j : partida.getJugadors()) {
             System.out.println(j);
         }
-        int[] aux = {6, 5};
+        int[] aux = {1, 2};
         Fitxa test = new Fitxa(aux);
         int jugadorInicial = (partida.buscarFitxa(test));
         System.out.println("Comença el jugador " + jugadorInicial);
         partida.tirarFitxa(jugadorInicial, test, DRETA);
-         int[] aux2 = {6, 5};
+         int[] aux2 = {3, 2};
         Fitxa test2 = new Fitxa(aux2);
         System.out.println(partida.getTablero());
-        partida.tirarFitxa(jugadorInicial, test2, ESQUERRA);
+        partida.tirarFitxa(jugadorInicial, test2, DRETA);
         System.out.println(partida.getTablero());
-        
-        partida.tirarFitxa(jugadorInicial, test, DRETA);
-        for (Jugador j : partida.getJugadors()) {
-            System.out.println(j);
-        }
-        System.out.println(partida.getTablero());
-         int[] aux3 = {8, 6};
+         int[] aux3 = {6, 3};
         Fitxa test5 = new Fitxa(aux3);
         partida.tirarFitxa(jugadorInicial, test5, DRETA);
          System.out.println(partida.getTablero());
+          int[] aux4 = {5, 4};
+        Fitxa test3 = new Fitxa(aux4);
+        partida.tirarFitxa(jugadorInicial, test3, DRETA);
+        System.out.println(partida.getTablero());
     }
 
 }
