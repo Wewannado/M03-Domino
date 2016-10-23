@@ -97,10 +97,7 @@ public class Partida {
      * @param posicio valor FALSE inserta a izquierda, valor true a la derecha
      */
     public boolean tirarFitxa(int jugador, Fitxa fitxa, boolean posicio) {
-        
-        if (tablero.isEmpty()) {
-            tablero.add(fitxa);
-        } else if (comprovarPosibilitatIntroduccio(fitxa, posicio)) {
+        if (comprovarPosibilitatIntroduccio(fitxa, posicio)) {
             if (posicio) {
                 tablero.add(comprovarPosicioFitxa(fitxa, posicio));
             } else {
@@ -113,22 +110,24 @@ public class Partida {
         return true;
     }
 
+    public void tirarFitxa(int jugador, Fitxa fitxa) {
+        
+       
+            tablero.add(fitxa);
+    }
+    
     public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio, Fitxa fitxa2, boolean posicio2) {
         jugadors[jugador].esborrarFitxa(fitxa);
         jugadors[jugador].esborrarFitxa(fitxa2);
-        if (tablero.isEmpty()) {
-            tablero.add(fitxa);
+        if (posicio) {
+            tablero.add(comprovarPosicioFitxa(fitxa, posicio));
         } else {
-            if (posicio) {
-                tablero.add(comprovarPosicioFitxa(fitxa, posicio));
-            } else {
-                tablero.addFirst(comprovarPosicioFitxa(fitxa, posicio));
-            }
-            if (posicio2) {
-                tablero.add(comprovarPosicioFitxa(fitxa, posicio2));
-            } else {
-                tablero.addFirst(comprovarPosicioFitxa(fitxa, posicio2));
-            }
+            tablero.addFirst(comprovarPosicioFitxa(fitxa, posicio));
+        }
+        if (posicio2) {
+            tablero.add(comprovarPosicioFitxa(fitxa, posicio2));
+        } else {
+            tablero.addFirst(comprovarPosicioFitxa(fitxa, posicio2));
         }
     }
 

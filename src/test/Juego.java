@@ -35,7 +35,7 @@ public class Juego {
         int[] aux = {6, 6};
         Fitxa test = new Fitxa(aux);
         int jugadorInicial = (partida.buscarFitxa(test));
-        partida.tirarFitxa(jugadorInicial, test, true);
+        partida.tirarFitxa(jugadorInicial, test);
         Jugador[] jugadors = partida.getJugadors();
         System.out.println("La fitxa ["+ aux[0]+":"+aux[1]+"] es de: "+jugadors[jugadorInicial].getNom());
         jugadorInicial++;
