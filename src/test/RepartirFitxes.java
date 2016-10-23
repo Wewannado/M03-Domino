@@ -33,7 +33,7 @@ public class RepartirFitxes {
         int[] aux = {6, 6};
         Fitxa test = new Fitxa(aux);
         int jugadorInicial = (partida.buscarFitxa(test));
-        System.out.println("Comença el jugador" + jugadorInicial);
+        System.out.println("Comença el jugador " + jugadorInicial);
 
     }
 

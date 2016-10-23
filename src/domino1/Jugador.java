@@ -12,23 +12,17 @@ import java.util.ArrayList;
  * @author MarcosPortatil
  */
 public class Jugador {
-    private int id;
+    
     private String nom;
     private ArrayList<Fitxa> fitxes;
     
-    public Jugador (int id, String nom) {
-        this.id=id;
+    public Jugador (String nom) {
+        
         this.nom=nom;
         fitxes= new ArrayList();
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+   
 
     public ArrayList<Fitxa> getFitxes() {
         return fitxes;
@@ -45,9 +39,7 @@ public class Jugador {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+   
     
     public void esborrarFitxa(Fitxa c) {
     fitxes.remove(c);
@@ -55,7 +47,7 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "id=" + id + ", nom=" + nom + ", fitxes=" + fitxes + '}';
+        return "Jugador{nom=" + nom + ", fitxes=" + fitxes + '}';
     }
    
 }

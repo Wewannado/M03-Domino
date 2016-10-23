@@ -40,7 +40,7 @@ public class Partida {
         jugadors = new Jugador[4];
         for (int i = 0; i < NombreJugadors; i++) {
 
-            jugadors[i] = new Jugador(i, nom[i]);
+            jugadors[i] = new Jugador(nom[i]);
 
         }
     }
@@ -52,7 +52,7 @@ public class Partida {
             aux = jugadors[i].getFitxes();
             for (int j = 0; j < aux.size(); j++) {
                 if (Arrays.equals(aux.get(j).getValor(), fitxa.getValor())) {
-                    jugador=i;
+                    jugador=i+1;
                 }
             }
         }
