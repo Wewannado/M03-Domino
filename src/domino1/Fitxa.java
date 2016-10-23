@@ -30,4 +30,5 @@ public class Fitxa {
         
         return "\n "+ "Fitxa{" + "Valor=" + Valor[0] + "," + Valor[1]+"}";
     }
+    
 }

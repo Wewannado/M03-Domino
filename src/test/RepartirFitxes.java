@@ -7,6 +7,7 @@ package test;
 
 import domino1.Partida;
 import domino1.Jugador;
+import domino1.Fitxa;
 
 /**
  *
@@ -30,7 +31,9 @@ public class RepartirFitxes {
         for (Jugador j: partida.getJugadors()) {
             System.out.println(j);
         }
-       
+        int[] aux = {6, 6};
+        Fitxa test= new Fitxa(aux);
+       System.out.println(partida.buscarFitxa(test));
         
         
     }
