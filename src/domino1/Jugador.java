@@ -13,21 +13,20 @@ import java.util.Arrays;
  * @author MarcosPortatil
  */
 public class Jugador {
-    
+
     private String nom;
     private ArrayList<Fitxa> fitxes;
-    
-    public Jugador (String nom) {
-        
-        this.nom=nom;
-        fitxes= new ArrayList();
-    }
 
-   
+    public Jugador(String nom) {
+
+        this.nom = nom;
+        fitxes = new ArrayList();
+    }
 
     public ArrayList<Fitxa> getFitxes() {
         return fitxes;
     }
+
     public Fitxa getFitxa(Fitxa fitxa) {
         return fitxa;
     }
@@ -36,36 +35,29 @@ public class Jugador {
         this.fitxes = fitxes;
     }
 
-  
-
     public String getNom() {
         return nom;
-    }    
+    }
+
     public void esborrarFitxa(Fitxa c) {
         for (int i = 0; i < fitxes.size(); i++) {
             if (Arrays.equals(c.getValor(), fitxes.get(i).getValor())) {
-                    fitxes.remove(i);
-                } else {
+                fitxes.remove(i);
+            } else {
                 c.invertir();
                 if (Arrays.equals(c.getValor(), fitxes.get(i).getValor())) {
                     fitxes.remove(i);
                 }
-;
-                
-                    
-                }  
-            
-                
-            
+
+            }
+
         }
-    
-                      
-                
-}
+
+    }
 
     @Override
     public String toString() {
         return "Jugador{nom=" + nom + ", fitxes=" + fitxes + '}';
     }
-   
+
 }
