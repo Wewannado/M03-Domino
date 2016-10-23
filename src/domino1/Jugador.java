@@ -28,7 +28,9 @@ public class Jugador {
     public ArrayList<Fitxa> getFitxes() {
         return fitxes;
     }
-
+    public Fitxa getFitxa(Fitxa fitxa) {
+        return fitxa;
+    }
 
     public void setFitxes(ArrayList<Fitxa> fitxes) {
         this.fitxes = fitxes;
