@@ -19,23 +19,22 @@ public class RepartirFitxes {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-          
+
         Partida partida = new Partida(4);
         partida.crearFitxes();
-        
-       
-        String [] noms = {"Roger","Marcos","Gerard","Abel"};
+
+        String[] noms = {"Roger", "Marcos", "Gerard", "Abel"};
         partida.crearJugadors(noms);
-        
+
         partida.repartirFitxes();
-        for (Jugador j: partida.getJugadors()) {
+        for (Jugador j : partida.getJugadors()) {
             System.out.println(j);
         }
         int[] aux = {6, 6};
-        Fitxa test= new Fitxa(aux);
-       System.out.println(partida.buscarFitxa(test));
-        
-        
+        Fitxa test = new Fitxa(aux);
+        int jugadorInicial = (partida.buscarFitxa(test));
+        System.out.println("Comença el jugador" + jugadorInicial);
+
     }
-    
+
 }
