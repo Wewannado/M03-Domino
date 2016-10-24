@@ -102,8 +102,10 @@ public class Partida {
         if (comprovarPosibilitatIntroduccio(fitxa, posicio)) {
             if (posicio) {
                 tablero.add(comprovarPosicioFitxa(fitxa, posicio));
+                System.out.println("Check 5 - pos val "+posicio);
             } else {
                 tablero.addFirst(comprovarPosicioFitxa(fitxa, posicio));
+                System.out.println("Check 6 - pos val "+posicio);
             }
         } else {
             return false;
@@ -144,9 +146,11 @@ public class Partida {
     private Fitxa comprovarPosicioFitxa(Fitxa fitxa, boolean posicio) {
         if (posicio) {
             if (fitxa.getValor()[0] != tablero.getLast().getValor()[1]) {
+                System.out.println("Check 1 - pos val "+posicio);
                 fitxa.invertir();
             }
         } else if (fitxa.getValor()[1] != tablero.getFirst().getValor()[0]) {
+            System.out.println("Check 2 - pos val "+posicio);
             fitxa.invertir();
         }
         return fitxa;
@@ -156,9 +160,11 @@ public class Partida {
         boolean correcte = false;
         if (posicio) {
             if (fitxa.getValor()[0] == tablero.getLast().getValor()[1] || fitxa.getValor()[1] == tablero.getLast().getValor()[1]) {
+                System.out.println("Check 3 - pos val "+posicio);
                 return true;
             }
         } else if (fitxa.getValor()[1] == tablero.getFirst().getValor()[0] || fitxa.getValor()[0] == tablero.getFirst().getValor()[0]) {
+            System.out.println("Check 4 - pos val "+posicio);
             return true;
         }
         return correcte;
