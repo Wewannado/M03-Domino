@@ -193,11 +193,11 @@ public class Partida {
                 result = lector.nextInt();
                 switch (result) {
                     case 0:
-                        resultat = false;
+                        resultat = true;
                         semafor = true;
                         break;
                     case 1:
-                        resultat = true;
+                        resultat = false;
                         semafor = true;
                         break;
                     default:
