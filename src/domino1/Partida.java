@@ -10,6 +10,7 @@ import java.util.Random;
 import domino1.Jugador;
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  *
@@ -94,7 +95,8 @@ public class Partida {
      *
      * @param jugador
      * @param fitxa
-     * @param posicio valor FALSE inserta a izquierda, valor true a la derecha
+     * @param posicio valor FALSE (0) inserta a la derecha, valor true (1) a la
+     * izquierda
      */
     public boolean tirarFitxa(int jugador, Fitxa fitxa, boolean posicio) {
         if (comprovarPosibilitatIntroduccio(fitxa, posicio)) {
@@ -111,11 +113,10 @@ public class Partida {
     }
 
     public void tirarFitxa(int jugador, Fitxa fitxa) {
-        
-       
-            tablero.add(fitxa);
+
+        tablero.add(fitxa);
     }
-    
+
     public void tirarFitxa(int jugador, Fitxa fitxa, boolean posicio, Fitxa fitxa2, boolean posicio2) {
         jugadors[jugador].esborrarFitxa(fitxa);
         jugadors[jugador].esborrarFitxa(fitxa2);
@@ -173,6 +174,35 @@ public class Partida {
 
     public Jugador[] getJugadors() {
         return jugadors;
+    }
+
+    public boolean yesNo(String missatje, String misError) {
+        int result = 0;
+        boolean resultat = false;
+        Scanner lector = new Scanner(System.in);
+        boolean semafor = false;
+        do {
+            System.out.println(missatje);
+            if (lector.hasNextInt()) {
+                result = lector.nextInt();
+                switch (result) {
+                    case 0:
+                        resultat = false;
+                        semafor = true;
+                        break;
+                    case 1:
+                        resultat = true;
+                        semafor = true;
+                        break;
+                    default:
+                        semafor = false;
+                }
+            } else {
+                System.out.println(misError);
+            }
+            lector.nextLine();
+        } while (!semafor);
+        return resultat;
     }
 
 }

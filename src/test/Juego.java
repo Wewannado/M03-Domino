@@ -37,7 +37,7 @@ public class Juego {
         int jugadorInicial = (partida.buscarFitxa(test));
         partida.tirarFitxa(jugadorInicial, test);
         Jugador[] jugadors = partida.getJugadors();
-        System.out.println("La fitxa ["+ aux[0]+":"+aux[1]+"] es de: "+jugadors[jugadorInicial].getNom());
+        System.out.println("La fitxa [" + aux[0] + ":" + aux[1] + "] es de: " + jugadors[jugadorInicial].getNom());
         jugadorInicial++;
         while (!partida.comprovarFiPartida()) {
             for (int i = jugadorInicial; i < partida.getJugadors().length; i++) {
@@ -45,17 +45,15 @@ public class Juego {
                 System.out.println(partida.getTablero());
                 boolean semaforo = false;
                 do {
-                    
+
                     System.out.println("Les teves fitxes son:");
                     System.out.println(jugadors[i]);
                     int valor1 = entrarUnNumero("Quina fitxa vols jugar? Entra el primer valor de la fitxa. -1 per passar torn.", "Has d'entrar un valor numeric");
                     if (valor1 != -1) {
                         int valor2 = entrarUnNumero("Quina fitxa vols jugar? Entra el segon valor de la fitxa", "Has d'entrar un valor numeric");
-                        int posicio = entrarUnNumero("Inserir a la dreta (0) o a l'esquerra (1)?", "Has d'entrar un valor numeric");
+                        boolean pos = partida.yesNo("Inserir a la dreta (0) o a l'esquerra (1)?", "Has d'entrar un valor numeric");
                         int[] aux2 = {valor1, valor2};
                         Fitxa fitxa = new Fitxa(aux2);
-                        boolean pos;
-                        pos = posicio == 0;
                         semaforo = partida.tirarFitxa(i, fitxa, pos);
                         if (!semaforo) {
                             System.out.println("No es pot jugar aquesta fitxa");
